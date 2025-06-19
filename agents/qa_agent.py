@@ -20,6 +20,6 @@ def answer_question(query: str):
         return_source_documents=False
     )
 
-    result = qa_chain.invoke({"query": query})
-    print("[qa_agent] Resultado:", result["result"])
-    return result["result"]
+    response = qa_chain.invoke({"query": query})
+    print("[qa_agent] Resultado:", response ["result"])
+    return response ["result"]

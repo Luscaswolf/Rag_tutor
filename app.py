@@ -10,7 +10,7 @@ import os
 load_dotenv()
 
 app = FastAPI()
-UPLOAD_FOLDER = "data"
+UPLOAD_FOLDER = "uploaded_files"
 
 
 @app.post("/upload")
@@ -19,12 +19,10 @@ async def upload_pdf(file: UploadFile = File(...)):
         os.makedirs(UPLOAD_FOLDER, exist_ok=True)
         file_path = os.path.join(UPLOAD_FOLDER, file.filename)
 
-        # 🟡 Lê e salva o conteúdo do arquivo corretamente
+        content = await file.read()
         with open(file_path, "wb") as buffer:
-            content = await file.read()  # <- await obrigatório para UploadFile
             buffer.write(content)
 
-        # ✅ Passa apenas o caminho do arquivo
         success = upload_and_index(file_path)
         if success:
             return {"message": "PDF carregado e indexado com sucesso."}
