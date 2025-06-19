@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  Rag_tutor:
+  rag-tutor:
     build:
       context: https://github.com/Luscaswolf/Rag_tutor
       dockerfile: Dockerfile
