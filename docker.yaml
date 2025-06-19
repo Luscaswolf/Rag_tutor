@@ -3,10 +3,10 @@ version: '3.8'
 services:
   oilgas_api:
     build:
-      context: .
+      context: https://github.com/Luscaswolf/Rag_tutor
       dockerfile: Dockerfile
     ports:
-      - "10001:80"
+      - "10002:8080"
     restart: unless-stopped
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY}
