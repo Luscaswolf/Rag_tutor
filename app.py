@@ -6,6 +6,8 @@ from agents.refinement_agent import refine_response
 from dotenv import load_dotenv
 import shutil
 import os
+from fastapi_mcp import FastApiMCP
+import uvicorn
 
 load_dotenv()
 
@@ -46,3 +48,17 @@ async def responder(pergunta: str = Form(...)):
         return {"resposta": resposta_final}
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
+
+
+
+mcp = FastApiMCP(app)
+
+mcp.mount()
+
+if __name__ == "__main__":
+    # Executa a aplicação via Uvicorn
+    uvicorn.run(
+        "app:app",
+        host="0.0.0.0",
+        port=8080
+    )

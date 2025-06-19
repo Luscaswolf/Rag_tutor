@@ -14,4 +14,4 @@ EXPOSE 8080
 CMD git reset --hard && \
     git pull https://github.com/Luscaswolf/Rag_tutor && \
     pip install -r requirements.txt && \
-    python main.py
+    python app.py
