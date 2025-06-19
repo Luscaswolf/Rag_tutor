@@ -1,5 +1,16 @@
+# Ignorar variáveis de ambiente e ambientes virtuais
 .env
+.venv/
+venv/
 __pycache__/
 *.pyc
-data/
-temp_*.pdf
+*.pyo
+*.pyd
+
+# Ignorar arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar pastas específicas de IDEs
+.vscode/
+.idea/
