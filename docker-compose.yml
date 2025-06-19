@@ -3,7 +3,7 @@ version: '3.8'
 services:
   rag-tutor:
     build:
-      context: https://github.com/Luscaswolf/Rag_tutor
+      context: .
       dockerfile: Dockerfile
     ports:
       - "10002:8080"
