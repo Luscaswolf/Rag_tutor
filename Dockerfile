@@ -4,7 +4,8 @@ WORKDIR /app
 
 #Corrige problemas de repositório e instala dependências
 RUN apt-get update -y --fix-missing && \
-    apt-get install -y git
+    apt-get install -y git && \
+    apt-get install sqlite3
 
 #Clona o repositório privado
 RUN git clone https://github.com/Luscaswolf/Rag_tutor .
