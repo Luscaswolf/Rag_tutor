@@ -14,3 +14,7 @@ Thumbs.db
 # Ignorar pastas específicas de IDEs
 .vscode/
 .idea/
+uploaded_files/
+
+# Ignora a pasta onde o banco vetorial Chroma é salvo
+data/
